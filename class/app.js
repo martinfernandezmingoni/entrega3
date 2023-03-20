@@ -19,7 +19,7 @@ app.get('/products', async (req, res) => {
     }
 
     try {
-        const data = await fs.promises.readFile('../data/products.json', 'utf8');
+        const data = await fs.promises.readFile('./products.json', 'utf8');
         const products = JSON.parse(data);
 
         const queries = {
@@ -44,7 +44,7 @@ app.get('/products/:pid', async (req, res) => { console.log(req.params.pid);
 
     try {
         
-        const data = await fs.promises.readFile('../data/products.json', 'utf8');
+        const data = await fs.promises.readFile('./products.json', 'utf8');
         const products = JSON.parse(data);
         const product = products.find(p => p.id === productId);
 
